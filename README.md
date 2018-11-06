@@ -1,2 +1,2 @@
 # Hospital
-Test php + mysql
+Test php + mysql project.
