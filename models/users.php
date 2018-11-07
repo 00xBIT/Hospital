@@ -122,12 +122,6 @@ function users_edit($link, $id, $firstName, $lastName, $roleId, $specialtyId)
                            $specialtyId,
                            $id);
 
-    echo '<script language="javascript">';
-    echo 'alert("query: ';
-    echo $query;
-    echo ' ")';
-    echo '</script>';
-
     $result = mysqli_query($link, $query);
 
     if (!$result)

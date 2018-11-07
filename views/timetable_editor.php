@@ -15,13 +15,13 @@
             <label>
                 Дата приема
                 <br>
-                <input type="date" name="date" value="" class="form-item" autofocus required>
+                <input type="date" name="date" value="<?=date('Y-m-d', $timetableItem['datetime'])?>" class="form-item" autofocus required>
             </label>
             <br>
             <label>
                 Время приема
                 <br>
-                <input type="time" name="time" value="" class="form-item" required>
+                <input type="time" name="time" value="<?=date('H:i', $timetableItem['datetime'])?>" class="form-item" required>
             </label>
             <br>
             <p>Записать на прием к Доктору - Пациента:</p>
@@ -32,7 +32,9 @@
                 <?php foreach($doctors as $item): ?>
                     <option label="<?=$item['firstName'].' '.
                                       $item['lastName'].' ('.
-                                      $item['specialtyId'].')'?>"><?=$item['id']?></option>
+                                      $item['specialtyId'].')'?>"
+                            <?php echo ($timetableItem['doctorId'] == $item['id']) ? "selected": ""?>>
+                                      <?=$item['id']?></option>
                 <?php endforeach ?>
                 </select>
             </label>
@@ -43,7 +45,9 @@
                 <select name="patientId" required>
                 <?php foreach($patients as $item): ?>
                     <option label="<?=$item['firstName'].' '.
-                                      $item['lastName']?>"><?=$item['id']?></option>
+                                      $item['lastName']?>"
+                            <?php echo ($timetableItem['patientId'] == $item['id']) ? "selected": ""?>>
+                                      <?=$item['id']?></option>
                 <?php endforeach ?>
                 </select>
             </label>

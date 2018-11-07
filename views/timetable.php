@@ -21,13 +21,13 @@
                     <th></th>
                     <th></th>
                 </tr>
-                <?php foreach($timetable as $item): ?>
+                <?php foreach($timetableItems as $item): ?>
                 <tr>
-                    <td><?=date('Y-m-d', $item['datetime'])?></td>
-                    <td><?=date('h-i', $item['datetime'])?></td>
-                    <td>-</td>
-                    <td><?=$item['doctorId']?></td>
-                    <td><?=$item['patientId']?></td>
+                    <td><?=date('d-m-Y', $item['datetime'])?></td>
+                    <td><?=date('H:i', $item['datetime'])?></td>
+                    <td><?=$item['docTitle']?></td>
+                    <td><?=$item['docLastName'].' '.$item['docFirstName']?></td>
+                    <td><?=$item['patLastName'].' '.$item['patFirstName']?></td>
                     <td>
                         <a href="index.php?action=edit&id=<?=$item['id']?>">Редактировать</a>
                     </td>

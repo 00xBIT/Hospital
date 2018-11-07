@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Ноя 05 2018 г., 18:21
+-- Время создания: Ноя 06 2018 г., 18:57
 -- Версия сервера: 10.1.36-MariaDB
 -- Версия PHP: 7.2.11
 
@@ -79,7 +79,10 @@ CREATE TABLE `timetable` (
 --
 
 INSERT INTO `timetable` (`id`, `datetime`, `doctorId`, `patientId`) VALUES
-(1, 1541458809, 7, 12);
+(1, 1541502000, 7, 12),
+(2, 1541856600, 7, 10),
+(3, 1541593200, 8, 13),
+(5, 1541674800, 7, 10);
 
 -- --------------------------------------------------------
 
@@ -104,7 +107,8 @@ INSERT INTO `users` (`id`, `firstName`, `lastName`, `roleId`, `specialtyId`) VAL
 (8, 'Герман', 'Соколов', 1, 3),
 (10, 'Иван', 'Больной', 2, 1),
 (11, 'Роман', 'Соловей', 2, 1),
-(12, 'Игорь', 'Козлов', 2, 1);
+(12, 'Игорь', 'Козлов', 2, 1),
+(13, 'Юля', 'Смирнова', 2, 1);
 
 --
 -- Индексы сохранённых таблиц
@@ -158,13 +162,13 @@ ALTER TABLE `specialtys`
 -- AUTO_INCREMENT для таблицы `timetable`
 --
 ALTER TABLE `timetable`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
